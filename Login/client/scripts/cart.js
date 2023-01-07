@@ -88,8 +88,3 @@ else{
 if (loggedUser) {
   document.getElementById("login").innerText = "Logout";
 }
-
-document.getElementById("login").addEventListener("click", function (e) {
-  e.preventDefault();
-  document.getElementById("login").innerText = "Login";
-});
