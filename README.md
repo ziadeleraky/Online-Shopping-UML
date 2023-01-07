@@ -9,6 +9,11 @@ E-commerce refers to buying and selling goods and services over the internet.
 <h1>⚡DEMO</h1>
 https://user-images.githubusercontent.com/50016070/211166850-11fe29c6-2d0e-43e8-a839-29849fa2f146.mp4
 
+
+https://user-images.githubusercontent.com/50016070/211166932-6b571154-8a86-4ea0-bcc8-4911c46b11ff.mp4
+
+
+
 <h1>⚡Installation</h1>
 <ol>
   <li>download VS code</li>
