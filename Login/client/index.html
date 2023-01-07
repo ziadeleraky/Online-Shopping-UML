@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/5ed78bfa33.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style/main.css" />
     <link rel="stylesheet" href="style/products.css" />
     <title>Online Shopping</title>
@@ -34,7 +34,7 @@
               <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../login.html">Login</a>
+              <a id="login" class="nav-link active" aria-current="page" href="../login.html">Login</a>
             </li>
           </ul>
         </div>
@@ -43,7 +43,6 @@
     <!--------All Products---------->
     <div class="container">
       <div class="headerProducts">
-        
         <div class="filterProducts">
           <ul id="categories">
             <li id="allProducts" class="active"><a href="#">All Products</a></li>
@@ -55,46 +54,20 @@
           </ul>
         </div>
         <div class="mb-3 row d-flex justify-content-end">
-          <div class="col-md-6 ">
-            <input type="search" placeholder="search" class="form-control w-100 " id="search">
+          <div class="col-md-6">
+            <input type="search" placeholder="search" class="form-control w-100" id="search" />
           </div>
-
         </div>
-
       </div>
 
       <div class="AllProducts">
-        <div class="products" id="products">
-
-
-        </div>
+        <div class="products" id="products"></div>
       </div>
+    </div>
 
-      
-    </div>
-    <br /><br />
-    <div class="container">
-      <table class="table  my-3 table-light" >
-        <thead>
-          <tr>
-            <th scope="col">Order Number</th>
-            <th scope="col">creation date</th>
-            <th scope="col">shipping Type</th>
-            <th scope="col">payment Option </th>
-            <th scope="col">total Price </th>
-            <th scope="col">orders status Price </th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody id="orders">
-        </tbody>
-      </table>
-    </div>
-   
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../library.js"></script>
     <script src="../../user.js"></script>
     <script src="scripts/product.js"></script>
-
   </body>
 </html>
