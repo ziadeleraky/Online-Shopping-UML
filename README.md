@@ -31,7 +31,7 @@ E-commerce refers to buying and selling goods and services over the internet.
     <ol>
        <li>the live server of project  </li>
        <li>open  the console page   </li>
-       <li>take a object from user class 
+       <li>createa object from user class 
        <br>
         User.register(name,username,mail,password,"admin")
         </li> 
