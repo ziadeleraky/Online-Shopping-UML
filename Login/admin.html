@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="./client/index.html">Online Shopping</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./client/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="loginAdmin.html">logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        <div class="my-5"></div>
+      <table class="table  my-3 table-light" >
+        <thead>
+          <tr>
+            <th scope="col">product ID</th>
+            <th scope="col">product Name</th>
+            <th scope="col">product Quantity</th>
+            <th scope="col">piece price </th>
+            <th scope="col">product category </th>
+            <th>Action</th>
+            <th>edit</th>
+          </tr>
+        </thead>
+        <tbody id="products">
+
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+
+        <input type="button" value="add product" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addProductModal">
+      </div>
+      <!--MODAL ADD PRODUCT-->
+      <div class="modal fade" id="addProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">add product</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="addproductform" id="addProductForm" action="#">
+                    <div class="form-group">
+                      <label for="productName">Name :</label>
+                      <input type="text" name="productName" id="productName" value="" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="productPrice">Price :</label>
+                      <input type="number" name="productPrice" id="productPrice" value="" class="form-control" min="0" placeholder="Price" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="productQuantity">Quantity :</label>
+                      <input type="number" name="productQuantity" id="productQuantity" value="" class="form-control" min="0" placeholder="Amount" required>
+                    </div>
+                    <label for="productCategory">Category</label>
+                    <div class="form-group">
+                    <select class="form-select" id="productCategory" aria-label="Default select example">
+
+                    </select>
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="addProduct">add product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--MODAL UPDATE PRODUCT-->
+      <div class="modal fade" id="updateProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">update product</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="updateProductForm" id="updateProductForm" action="#">
+                    <div class="form-group">
+                      <label for="updateProductName">Name :</label>
+                      <input type="text" name="updateProductName" id="updateProductName" value="" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="updateProductPrice">Price :</label>
+                      <input type="number" name="updateProductPrice" id="updateProductPrice" value="" class="form-control" min="0" placeholder="Price" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="updateProductQuantity">Quantity :</label>
+                      <input type="number" name="updateProductQuantity" id="updateProductQuantity" value="" class="form-control" min="0" placeholder="Amount" required>
+                    </div>
+
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="updateProduct">update product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table categories my-3 table-light">
+        <thead>
+          <tr>
+            <th scope="col" class="">category ID</th>
+            <th scope="col">category name</th>
+            <th>action</th>
+            <th>edit</th>
+
+          </tr>
+        </thead>
+        <tbody id="categories">
+          
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <input type="button" value="add category" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+      </div>
+            <!--MODAL ADD Category-->
+            <div class="modal fade" id="addCategoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">add category </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="addcategoryform" id="addCategoryForm" action="#">
+                            <div class="form-group">
+                              <label for="name">Name :</label>
+                              <input type="text" name="categoryName" id="categoryName" value="" class="form-control" placeholder="Name" required>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="addCategory">add category</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!--MODAL UPDATE CATEGORY-->
+            <div class="modal fade" id="updateCategoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">add category </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="addcategoryform" id="addCategoryForm" action="#">
+                            <div class="form-group">
+                              <label for="updateCategoryName">Name :</label>
+                              <input type="text" name="updateCategoryName" id="updateCategoryName" value="" class="form-control" placeholder="Name" required>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="updateCategory">update category</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+            <table class="table  my-3 table-light" >
+                <thead>
+                  <tr>
+                    <th scope="col">Orders ID</th>
+                    <th scope="col"> user ID</th>
+                    <th scope="col">total Price</th>
+                    <th scope="col">shipping type </th>
+                    <th scope="col">payment Option</th>
+                    <th scope="col">order Status </th>
+                    <th>Action</th>
+
+                  </tr>
+                </thead>
+                <tbody id="ordersAdmin">
+        
+                </tbody>
+                                <!--MODAL edit ORder-->
+            <div class="modal fade" id="editOrderModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">change order status </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="adduserform" id="adduserform" action="#">
+
+                            <div class="form-group">
+                                <label for="orderStatus">orders status</label>
+                              <select class="form-select" id="orderStatus" aria-label="Default select example">
+                                <option value="confirmed">confirm</option>
+                                <option value="rejected">reject</option>
+                              </select>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="changeOrderStatus">confirm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+        
+              <table class="table  my-3 table-light" >
+                <thead>
+                  <tr>
+                    <th scope="col">user ID</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col">user name</th>
+                    <th scope="col">email </th>
+                    <th scope="col">type </th>
+                    <th>Action</th>
+
+                  </tr>
+                </thead>
+                <tbody id="users">
+        
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-center">
+                <input type="button" value="add user" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addUserModal">
+              </div>
+                <!--MODAL ADD User-->
+            <div class="modal fade" id="addUserModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">add user </h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="adduserform" id="adduserform" action="#">
+                            <div class="form-group">
+                                <label for="name">name</label>
+                              <input type="text" name="name" id="name" value="" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userName">user name</label>
+                              <input type="text" name="userName" id="userName" value="" class="form-control" placeholder="User Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">email</label>
+                              <input type="email" name="email" id="email" value="" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">password</label>
+                              <input type="password" name="password" id="password" value="" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userType">user type</label>
+                              <select class="form-select" id="userType" aria-label="Default select example">
+                                <option value="admin">admin</option>
+                                <option value="client">client</option>
+                              </select>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="addUser">add user</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../library.js"></script>
+    <script src="../shipping.js"></script>
+    <script src="../payment.js"></script>
+    <script src="../user.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>

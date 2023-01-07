@@ -1,0 +1,187 @@
+.headerProducts{
+    display: inline-block;
+}
+.headerProducts >div{
+    display: inline-block;
+}
+.headerProducts .header{
+    margin-right: 50px;
+}
+.headerProducts select{
+    color: #FF5039;
+    border: 1px solid #0d6efd;
+}
+.filterProducts {
+    margin: 20px auto;
+    width:650px;
+    text-align: center;
+}
+.filterProducts ul{
+    list-style: none;
+    margin: 5px 0;
+}
+.filterProducts ul li{
+    display: inline-block;
+   background-color: #F1F1F1;
+   border-radius: 20px;
+   margin: auto;
+   cursor: pointer;
+   border: 1px solid #0d6efd;
+   
+}
+.filterProducts ul li a{
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #0d6efd;
+}
+.filterProducts ul li:hover a ,
+.filterProducts ul li.active a
+{
+    border-radius: 20px;
+    background-color: #0d6efd;
+    color: #F1F1F1;
+    border: 1px solid #0d6efd;
+}
+
+/************products************/
+.product{
+ display: inline-block;
+ width: 22%;
+ margin: 5px;
+ padding: 5px;
+}
+.product img{
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.stars{
+    margin: 2px 0;
+}
+.stars i{
+    color:#FF5039 ;
+} 
+
+.product:hover{
+    cursor: pointer;
+    width: 21%;
+    box-shadow: inset 0 0 15px #FF5039;
+}
+/*************pagination*******/
+.pagination{
+    text-align: center;
+}
+.pagination ul{
+    list-style: none;
+}
+.pagination ul li{
+    display: inline-block;
+    color: #FF5039;
+    background-color: #F1F1F1;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #FF5039;
+}
+.pagination ul li:hover{
+    background-color: #FF5039;
+    color: #F1F1F1;
+    cursor: pointer;
+}
+/**************media query : 1100px**************/
+@media (max-width:1100px) {
+    .container{
+        width:980px
+    }
+    .filterProducts {
+        margin: 20px auto;
+        width:650px;
+    }
+}
+/**************media query : 992px**************/
+@media (max-width:992px) {
+    .container{
+        width:850px
+    }
+    .product{
+        width: 20%;
+    }
+    .filterProducts ul li a{
+        padding: 5px;
+    }
+     .headerProducts .header{
+        margin-right: 10px;
+    } 
+   
+    .filterProducts {
+        margin: 20px auto;
+        width:520px;
+    }
+}
+/**************media query : 992px**************/
+@media (max-width:870px) {
+    .container{
+        width:725px
+    }
+    .product{
+        width: 30%;
+    }
+    .product:hover{
+        width: 29%;
+    }
+    .filterProducts ul li a{
+        padding: 1px;
+    }
+     .headerProducts .header{
+        margin-right: 0;
+    } 
+   
+    .filterProducts {
+        width:490px;
+    }
+}
+/**************media query : 768px**************/
+@media (max-width:768px) {
+    .container{
+        width:590px
+    }
+    .filterProducts ul li a{
+        padding: 2px;
+        font-size: .8rem;
+    }
+    .product{
+        width: 45%;
+    }
+    .product:hover{
+        width: 43%;
+    }
+    .filterProducts {
+        width:400px;
+    }
+    #sort{
+        display: none;
+    }
+}
+/**************media query : 600px**************/
+@media (max-width:600px) {
+    .container{
+        width:400px
+    }
+    .header{
+        margin-left:25px ;
+    }
+    .filterProducts {
+        width:350px;
+        margin: 5px auto;
+    }    
+    .filterProducts ul li{    
+        margin: 2px;
+    }
+    .filterProducts ul li a{    
+        margin: 2px;
+        font-size: .9rem;
+    }
+    .AllProducts{
+        padding: 0 3px;
+    }
+}

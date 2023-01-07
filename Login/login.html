@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="./client/index.html">Online Shopping</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./client/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="register.html">register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="section  mt-5 text-light">
+      <div class="mb-3 row d-flex justify-content-center">
+        <label for="userName" class="col-sm-2 ">User name</label>
+        <div class="col-sm-5">
+          <input type="text" placeholder="user name" class="form-control" id="userName" >
+        </div>
+      </div>
+      <div class="mb-3 row d-flex justify-content-center">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5 d-none" id="alertingLogin">
+          <p class="alert alert-danger"> user name or password incorrect</p>
+        </div>
+      </div>
+      <div class="mb-3 row d-flex justify-content-center">
+        <label for="password" class="col-sm-2 ">Password</label>
+        <div class="col-sm-5">
+          <input type="password" placeholder="password" class="form-control" id="password">
+        </div>
+      </div>
+      <div class="d-flex justify-content-center row mb-3">
+        
+        <div class="col-sm-7">
+        </div>
+        <div class=" col-sm-2">
+          <input type="button" class="btn btn-primary btn-outline-light fw-bolder"  value="LOGIN" id="loginClient">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../library.js"></script>
+    <script src="../shipping.js"></script>
+    <script src="../payment.js"></script>
+    <script src="../user.js"></script>
+    <script src="./Login.js"></script>
+  </body>
+</html>

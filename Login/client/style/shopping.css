@@ -1,0 +1,9 @@
+.service,
+.orders ,
+.users ,
+.products {
+    display: none;
+}
+.categories{
+    display: block;
+}

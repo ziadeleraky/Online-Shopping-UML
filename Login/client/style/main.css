@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,500;0,600;0,700;0,900;1,300;1,400;1,600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.container{
+    width: 1200px;
+    margin: auto;
+}
+.btn {
+    display: inline-block;
+    border: 1px solid #FF5039;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.add {
+    color: #ffffff;
+    background-color: #FF5039;
+}
+.btn:focus, .input:focus {
+    outline: none;
+}
+/* :root {
+    --main-color: #FF5039;
+    --background: #FFC1CA;
+    --dark-text: #000000;
+    --light-text: #FFFFFF;
+} */
+
+/*footer styling*/
+.footer{
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+}
+.footer .app
+{   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+    width: 30%;
+}
+.footer .app p
+{
+    font-weight: light;
+    color: gray;
+    font-size: 15px;
+}
+.footer .app .icons{
+    margin-top: 20px;
+    overflow: hidden;
+}
+.footer .app .icons .iconContainer{
+    float: left;
+    width: 50%;
+}
+.iconContainer img{
+    cursor: pointer;
+    width: 60%;
+}
+.logoContainer
+{   text-align: center;
+    margin-top: 20px;
+    padding-left: 20px;
+    float: left;
+    width: 30%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.footerLogoText p{
+    color:  gray;
+    font-size: 15px;
+
+}
+.footerLogo img
+{
+    margin-bottom: 30px;
+    width: 30%;
+}
+.footer .data{
+    margin-left: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 30px;
+    padding-left: 20px;
+    float: left;
+    width: 15%;
+}
+.footer .data h5{
+    padding-left: 30px;
+}
+.footer .data ul {
+    color: gray;
+    list-style: none;
+}
+.footer .data ul li
+{
+    font-weight: light;
+    font-size: 15px;
+}
+/*menu styling */
+.avatar {
+    padding: 30px 30px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+}
+.msg {
+    display: inline-block;
+    position: absolute;
+    line-height: 100px;
+    top: 0;
+}
+.navigation {
+    position: relative;
+    background-color: #FF5039;
+    height: 100px;
+    margin-bottom: 100px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    .listContanier {
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #FFC1CA;
+        display: none;
+        /* clip-path: circle(25px at calc(100% - 45px) 45px); */
+        transition: all 0.3s ease-in-out;
+    }
+    
+    
+    
+    #active:checked ~ .listContanier{
+        display: block;
+    }
+    
+    .menu-btn{
+        position: absolute;
+        z-index: 200;
+        right: 20px;
+        top: 20px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        background: #FF5039;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #active:checked ~ .menu-btn{
+        color: #fff;
+    }
+    
+    #active:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    
+    .listContanier ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+    }
+    
+    .listContanier ul li {
+        margin: 15px 0;
+        list-style: none;
+    }
+    
+    .listContanier ul li a {
+        color: none;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 5px 30px;
+        color: #FFC1CA;
+        border-radius: 50px;
+        background: #FF5039;
+        position: relative;
+        line-height: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    input[type="checkbox"]{
+        display: none;
+    }
+    
+    .listContanier ul li a:after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        width: 104%;
+        height: 110%;
+        left: -2%;
+        top: -5%; 
+        border-radius: 50px;
+        transform: scaleY(0);
+        z-index: -1;
+        animation: rotate 1.5s linear infinite;
+        transition: transform 0.3s ease;
+    }
+    
+    .listContanier ul li a:hover:after{
+        transform: scaleY(1);
+    }
+    
+    .listContanier ul li a:hover{
+        color: #fff;
+    }
+
